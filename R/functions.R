@@ -55,3 +55,4 @@ scatter_ntl<- function(ntl_all){
       linewidth = 0.3
     )
 }
+

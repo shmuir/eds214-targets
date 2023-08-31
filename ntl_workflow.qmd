@@ -3,32 +3,29 @@ title: "Reproducible workflow with `targets`: North Temperate Lakes Ice Cover"
 format: html
 ---
 
-In this example, we will use the R package `targets` (https://books.ropensci.org/targets/) to develop a reproducible workflow that lets us track changes and determine which part of the workflow needs to be re-run when we modify the data or the analysis we are conducting. 
+In this example, we will use the R package `targets` (https://books.ropensci.org/targets/) to develop a reproducible workflow that lets us track changes and determine which part of the workflow needs to be re-run when we modify the data or the analysis we are conducting.
 
 Our goal is to reproduce the example on the `lterdatasampler` vignette using ice cover and air temperature measurement at the North Temperate Lakes Ice Cover (NTL) LTER site to investigate the relationship between ice cover duration and air temperature in the Fall/Winter.
 
 <https://lter.github.io/lterdatasampler/articles/ntl_icecover_vignette.html>
 
-
 ### Set up
 
 The file structure of our project looks like this:
 
-```
-├── R
-│   └── functions.R
-├── README.md
-├── data
-│   ├── ntl_airtemp.csv
-│   └── ntl_icecover.csv
-├── eds214-handson-targets.Rproj
-├── ntl_workflow.qmd
-```
+    ├── R
+    │   └── functions.R
+    ├── README.md
+    ├── data
+    │   ├── ntl_airtemp.csv
+    │   └── ntl_icecover.csv
+    ├── eds214-handson-targets.Rproj
+    ├── ntl_workflow.qmd
 
-- `R/functions.R`: contains all the processing and analysis steps we will be performing as functions
-- `data/ntl_airtemp.csv`: air temperature time-series (one for all the lakes)
-- `data/ntl_icecover.csv`: lake ice cover duration (several lakes)
-- `ntl_workflow.qmd`: quarto document used to develop our workflow
+-   `R/functions.R`: contains all the processing and analysis steps we will be performing as functions
+-   `data/ntl_airtemp.csv`: air temperature time-series (one for all the lakes)
+-   `data/ntl_icecover.csv`: lake ice cover duration (several lakes)
+-   `ntl_workflow.qmd`: quarto document used to develop our workflow
 
 ### Starting the workflow
 
@@ -39,12 +36,12 @@ library(targets)
 use_targets()
 ```
 
-### Traget script file
+### Target script file
 
 You need to manually edit `_targets.R` file to:
 
-- Add the necessary libraries to run your analysis
-- List the different components of your workflow and their relationships
+-   Add the necessary libraries to run your analysis
+-   List the different components of your workflow and their relationships
 
 In our case we only need the `tidyverse`
 
@@ -69,13 +66,14 @@ Here are the steps or targets of our workflow:
   tar_target(scatterplot, scatter_ntl(joined))
 ```
 
-
 ### Inspect the workflow
 
 #### List of the various steps
+
 ```{r}
 tar_manifest()
 ```
+
 #### visualize
 
 ```{r}
@@ -87,6 +85,7 @@ tar_visnetwork()
 ```{r}
 tar_make()
 ```
+
 ### look at the plot (our output in this example)
 
 ```{r}
@@ -101,16 +100,14 @@ tar_make()
 
 What just happened?!
 
-
 ### Tracking changes
 
-Now try to modify parts of your workflow and re-run things: 
+Now try to modify parts of your workflow and re-run things:
 
-- one of the data sets
-- one of the functions
-
+-   one of the data sets
+-   one of the functions
 
 ## Reference
 
-- Targets documentation: <https://books.ropensci.org/targets/targets.html>
-- awesome pipeline tools: <https://github.com/pditommaso/awesome-pipeline#pipeline-frameworks--libraries>
+-   Targets documentation: <https://books.ropensci.org/targets/targets.html>
+-   awesome pipeline tools: <https://github.com/pditommaso/awesome-pipeline#pipeline-frameworks--libraries>

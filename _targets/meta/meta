@@ -1,0 +1,14 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+avg_airtemp|function|72229748a7a546ba|||||||||||||||
+avg_icecover|function|5c4c5f8ce4eb9b60|||||||||||||||
+data_air|stem|ea793373ce98e723|547f68c27e0f27c4|5a320c49cdab184b|-2051412980||t19600.739501434s|ce9fcabdbf5a329b|244258|rds|local|vector|||0.026||
+data_avgair|stem|09bb273aa64a8f7e|3a084298fa7c6fbf|cbb63386239c3e38|-1352334904||t19600.7395027767s|e56d86226eb032a1|1647|rds|local|vector|||0.081||
+data_avgice|stem|0dcc224a6fd62d6d|c3aa3f5a746c0b4a|85f0878cb3e4dbc5|-1915386121||t19600.7395018044s|dc4bf0cbbfcde739|876|rds|local|vector|||0.024||
+data_ice|stem|7116f1dbe973f3f2|03d7bf49f1b31e38|bea1530912ef1f07|-246035198||t19600.7395003228s|ff489197f12ca688|3297|rds|local|vector|||0.158||
+file_air|stem|c6d8387768835634|7f696d0026263826|ef46db3751d8e999|1005297604|data/ntl_airtemp.csv|t19600.7174910526s|c79b1c6ec9f35e78|1139515|file|local|vector|||0||
+file_ice|stem|60e6db30522061e5|b61f3677928a14d4|ef46db3751d8e999|-2123742206|data/ntl_icecover.csv|t19600.7174910526s|9ce6e40099565b75|14403|file|local|vector|||0.651||
+get_data|function|0f89ad55d86e6b50|||||||||||||||
+join_ntl|function|855a447b0f8b72e9|||||||||||||||
+joined|stem|e261cf210ea39740|3a8ecd17b4fdd549|381677232380e98d|-2051793385||t19600.7395029156s|59e5e5a503986d8c|2020|rds|local|vector|||0.005||
+scatter_ntl|function|c0918394a213e8c6|||||||||||||||
+scatterplot|stem|ce6d8c9af4134b4c|2315084755b17ab3|f7c116ed26982b68|-1955322369||t19600.7395033324s|e7411eb9467618f3|53609|rds|local|vector|||0.013||
